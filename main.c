@@ -5,14 +5,48 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
+int combination(int n, int r)
+{
+	int answer = factorial(n)/(factorial(n-r)*factorial(r));
+	
+	return answer;
+}
+
+int factorial(int num)
+{
+	int res = 1;
+	int i;
+
+	for (i=1; i<=num; i++)
+	{
+		res=res*i;
+	}
+
+	return res;
+}
+
+int get_integer(char c)
+{
+	int a;
+	printf("input %d: ", c);
+	scanf("%d", &a);
+	return a;
+}
+
 int main(int argc, char *argv[])
 {
-	int i;
-	int max = 45;
+	int n;
+	printf("input n: ", n);
+	scanf("%d", &n);
 
-	srand((unsigned)time(NULL));
-	for(i = 0; i < 6; i++)
-		printf("%d ", 1+rand()%max);
+	int r;
+	printf("input r: ", r);
+	scanf("%d", &r);
 
-	return 0;
+	int answer = combination(n,r);
+
+	printf("%d", answer);
+	
+	return;
 }
+
