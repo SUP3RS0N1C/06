@@ -7,7 +7,7 @@
 
 int combination(int n, int r)
 {
-	long answer;
+	int answer;
 	
 	int numerator = factorial(n);
 	int denominator = (factorial(n-r)*factorial(r));
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 	printf("input r: ", r);
 	scanf("%d", &r);
 
-	long answer = combination(n,r);
+	int answer = combination(n,r);
 
 	printf("combination result is %d.", answer);
 	
