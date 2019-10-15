@@ -7,7 +7,12 @@
 
 int combination(int n, int r)
 {
-	int answer = factorial(n)/(factorial(n-r)*factorial(r));
+	long answer;
+	
+	int numerator = factorial(n);
+	int denominator = (factorial(n-r)*factorial(r));
+	
+	answer = numerator/denominator;
 	
 	return answer;
 }
@@ -16,21 +21,12 @@ int factorial(int num)
 {
 	int res = 1;
 	int i;
-
 	for (i=1; i<=num; i++)
 	{
-		res=res*i;
+		res = res * i;
 	}
 
 	return res;
-}
-
-int get_integer(char c)
-{
-	int a;
-	printf("input %d: ", c);
-	scanf("%d", &a);
-	return a;
 }
 
 int main(int argc, char *argv[])
@@ -43,9 +39,9 @@ int main(int argc, char *argv[])
 	printf("input r: ", r);
 	scanf("%d", &r);
 
-	int answer = combination(n,r);
+	long answer = combination(n,r);
 
-	printf("%d", answer);
+	printf("combination result is %d.", answer);
 	
 	return;
 }
